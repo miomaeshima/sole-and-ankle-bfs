@@ -5,7 +5,7 @@ import styled from 'styled-components/macro';
 const Main = () =>{
     return (
     <Wrapper>
-    <Nav>Nav</Nav>
+    <Nav/>
     <ShoeBox>
         Main
     </ShoeBox>
@@ -18,5 +18,6 @@ display:flex;
 `;
 const ShoeBox = styled.div`
 background: pink;
+flex: 1;
 `;
 export default Main;
