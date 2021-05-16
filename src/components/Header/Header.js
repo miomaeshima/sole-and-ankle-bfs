@@ -16,7 +16,7 @@ const Header = () =>{
         <TopHeader>
             <Col>Sole&Ankle</Col>
             <CategoryContainer>
-            <Category>sale</Category>
+            <Category className="sale">sale</Category>
             <Category>new release</Category>
             <Category>men</Category>    
             <Category>women</Category>
@@ -54,7 +54,6 @@ const Promo = styled.div`
 `;
 
 const TopHeader = styled.div`
- color: ${COLORS.gray900};
  height: 72px;
  display: flex;
  flex-direction: row;
@@ -82,5 +81,8 @@ font-size: 18px;
 font-weight: ${WEIGHT.medium};
 width: max-content;
 text-transform: uppercase;
+&.sale{
+    color: ${COLORS.primary};
+}
 `;
 export default Header;

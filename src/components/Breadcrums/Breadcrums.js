@@ -4,10 +4,15 @@ import {COLORS, WEIHGT} from '../../constants';
 
 const Breadcrumbs = () =>{
     return (
-        <>Bredcrumbs</>
+        <Crumbs>BreadCrumbs</Crumbs>
     )
     
 }
+
+const Crumbs = styled.div`
+    font-size: 14px;
+    background: lightyellow;
+`;
 
 
 export default Breadcrumbs;
