@@ -31,15 +31,20 @@ const ShoeCard = ({
     ? 'on-sale'
     : isNewShoe(releaseDate)
       ? 'new-release'
-      : 'default'
+      : 'default';
 
   return (
     <Link href={`/shoe/${slug}`}>
       <Wrapper>
         <ImageWrapper>
+          {typeof salePrice==='number'
+          ? <Notice>Sale</Notice>
+          : 
+          isNewShoe(releaseDate)
+            ? <Notice>Just Released!</Notice>
+            : "none" }
           <Image alt="" src={imageSrc} />
         </ImageWrapper>
-        <div size={12} />
         <Row>
           <Name>{name}</Name>
           <Price>{formatPrice(price)}</Price>
@@ -59,21 +64,38 @@ const Link = styled.a`
 
 const Wrapper = styled.article`
 width: 340px;
-height: 370px; 
-background: lightblue;
 `;
 
 const ImageWrapper = styled.div`
   position: relative;
+  
+  
 `;
 
 const Image = styled.img`
-    width: 100%
+    width: 100%;
+    margin-bottom: 14px;
+    border-radius: 16px 16px 4px 4px;
+  
+`;
+
+const Notice = styled.div`
+  position: absolute;
+  top: 12px;
+  right: -4px;
+  font-size: 14px;
+  color: ${COLORS.white};
+  background-color: blue;
+  padding: 9px 10px 7px 10px;
+  
+
 `;
 
 const Row = styled.div`
-  font-size: 1rem;
-  
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;  
+  margin: 6px 0px 26px 0px;
 `;
 
 const Name = styled.h3`

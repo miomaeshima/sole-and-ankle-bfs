@@ -41,6 +41,7 @@ const Header = styled.div`
   width: 100%;
   height: 24px;
   background: pink;
+  margin-bottom: 43px;
 `;
 
 const Type = styled.div`
