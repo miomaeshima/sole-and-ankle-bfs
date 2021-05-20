@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../Header";
 import Nav from "../Nav";
 import ProductSection from "../ProductSection";
-import { COLORS, WEIGHT } from "../../constants";
+import { COLORS, WEIGHTS } from "../../constants";
 
 import styled from "styled-components/macro";
 
@@ -25,6 +25,6 @@ const Wrapper = styled.div`
 `;
 
 const Main = styled.div`
- display: flex;
+  display: flex;
 `;
 export default App;

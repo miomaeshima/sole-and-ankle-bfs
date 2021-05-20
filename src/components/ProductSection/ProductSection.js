@@ -1,16 +1,27 @@
 import React from "react";
 import styled from "styled-components/macro";
-import Sort from '../Sort';
-import TopSpace from '../TopSpace';
-import {WEIGHT} from '../../constants'
+import Sort from "../Sort";
+import TopSpace from "../TopSpace";
+import { WEIGHTS } from "../../constants";
+import SHOES from "../../data";
+import ShoeCard from "../ShoeCard";
 
 const ProductSection = () => {
+ 
+
   return (
-  <Wrapper>
-  <TopSpace/>
-  <Header><Type>Running</Type><Sort/></Header>
-  <ProductContainer></ProductContainer>
-  </Wrapper>
+    <Wrapper>
+      <TopSpace />
+      <Header>
+        <Type>Running</Type>
+        <Sort />
+      </Header>
+      <ProductContainer>
+        {SHOES.map((shoe) => (
+          <ShoeCard key={shoe.slug} {...shoe} />
+        ))}
+      </ProductContainer>
+    </Wrapper>
   );
 };
 
@@ -29,17 +40,19 @@ const Header = styled.div`
   align-items: center;
   width: 100%;
   height: 24px;
-  background:pink;
-
+  background: pink;
 `;
 
 const Type = styled.div`
   font-size: 24px;
-  font-weight: ${WEIGHT.medium};
+  font-weight: ${WEIGHTS.medium};
 `;
 
 const ProductContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 36px;
 `;
-
 
 export default ProductSection;

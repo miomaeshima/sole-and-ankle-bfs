@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { COLORS, WEIGHT } from "../../constants";
+import { COLORS, WEIGHTS } from "../../constants";
 import Breadcrumbs from "../Breadcrums";
 import TopSpace from "../TopSpace";
 
@@ -52,7 +52,7 @@ const Li = styled.li`
   text-transform: capitalize;
   font-size: 16px;
   line-height: 32px;
-  font-weight: ${WEIGHT.medium};
+  font-weight: ${WEIGHTS.medium};
   &.active {
     color: ${COLORS.primary};
   }
