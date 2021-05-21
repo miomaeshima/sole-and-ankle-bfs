@@ -7,12 +7,14 @@ import { COLORS, WEIGHTS } from "../../constants";
 import styled from "styled-components/macro";
 
 function App() {
+  const [sortId, setSortId] = React.useState('newest');
+  
   return (
     <Wrapper>
       <Header />
       <Main>
         <Nav />
-        <ProductSection />
+        <ProductSection sortId={sortId} setSortId={setSortId} />
       </Main>
     </Wrapper>
   );

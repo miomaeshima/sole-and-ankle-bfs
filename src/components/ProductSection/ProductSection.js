@@ -1,20 +1,25 @@
 import React from "react";
 import styled from "styled-components/macro";
-import Sort from "../Sort";
+import Select from "../Select";
 import TopSpace from "../TopSpace";
 import { WEIGHTS } from "../../constants";
 import SHOES from "../../data";
 import ShoeCard from "../ShoeCard";
 
-const ProductSection = () => {
- 
-
+const ProductSection = ({sortId, setSortId}) => {
   return (
     <Wrapper>
       <TopSpace />
       <Header>
         <Type>Running</Type>
-        <Sort />
+        <Select 
+          label="Sort"
+          value={sortId}
+          onChange={(ev)=>setSortId(ev.target.value)}
+        >
+        <option value= "newest">Newest Releases</option>
+        <option value = "price">Price</option>
+        </Select>
       </Header>
       <ProductContainer>
         {SHOES.map((shoe) => (
