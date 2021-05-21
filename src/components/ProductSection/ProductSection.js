@@ -50,6 +50,8 @@ const Type = styled.div`
 `;
 
 const ProductContainer = styled.div`
+  background: green;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

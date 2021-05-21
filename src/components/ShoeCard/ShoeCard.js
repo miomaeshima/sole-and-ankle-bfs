@@ -33,24 +33,38 @@ const ShoeCard = ({
       ? 'new-release'
       : 'default';
 
+  const styleOfPrice = salePrice 
+  ?  {
+      color: COLORS.gray500,
+      textDecoration: "line-through"
+    }
+  : {
+      color: "inherit"
+    };
+   
+    
   return (
     <Link href={`/shoe/${slug}`}>
       <Wrapper>
         <ImageWrapper>
           {typeof salePrice==='number'
-          ? <Notice>Sale</Notice>
+          ? <Notice style={{backgroundColor: COLORS.primary}}>Sale</Notice>
           : 
           isNewShoe(releaseDate)
-            ? <Notice>Just Released!</Notice>
-            : "none" }
+            ? <Notice style={{backgroundColor: COLORS.secondary}}>Just Released!</Notice>
+            :<></>}
           <Image alt="" src={imageSrc} />
         </ImageWrapper>
         <Row>
           <Name>{name}</Name>
-          <Price>{formatPrice(price)}</Price>
+          <Price style={styleOfPrice}>{formatPrice(price)}</Price>
         </Row>
         <Row>
           <ColorInfo>{pluralize("Color", numOfColors)}</ColorInfo>
+          {salePrice
+          ? <SalePrice>{formatPrice(salePrice)}</SalePrice>
+          : <></>
+          }
         </Row>
       </Wrapper>
     </Link>
@@ -60,16 +74,15 @@ const ShoeCard = ({
 const Link = styled.a`
   text-decoration: none;
   color: inherit;
+  background: pink;
+  flex: 1 1 300px;
 `;
 
 const Wrapper = styled.article`
-width: 340px;
 `;
 
 const ImageWrapper = styled.div`
-  position: relative;
-  
-  
+  position: relative;   
 `;
 
 const Image = styled.img`
@@ -84,11 +97,8 @@ const Notice = styled.div`
   top: 12px;
   right: -4px;
   font-size: 14px;
-  color: ${COLORS.white};
-  background-color: blue;
-  padding: 9px 10px 7px 10px;
-  
-
+  color: ${COLORS.white};  
+  padding: 9px 10px 7px 10px; 
 `;
 
 const Row = styled.div`
@@ -103,7 +113,8 @@ const Name = styled.h3`
   color: ${COLORS.gray900};
 `;
 
-const Price = styled.span``;
+const Price = styled.span`
+  font-weight: ${WEIGHTS.normal}`;
 
 const ColorInfo = styled.p`
   color: ${COLORS.gray700};
