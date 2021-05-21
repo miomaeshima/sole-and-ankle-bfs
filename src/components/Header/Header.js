@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import { COLORS, WEIGHTS } from "../../constants";
 import Icon from "../Icon";
+import UnstyledButton from "../UnstyledButton";
 
 const Header = () => {
   return (
@@ -9,10 +10,10 @@ const Header = () => {
       <SuperTopHeader>
         <Promo>Free shipping on domestic orders over $75!</Promo>
         <input type="search" placeholder="Search..." />
-        <button>
-          <Icon></Icon>
-        </button>
-        <Icon />
+       <HelpLink href="/help">Help</HelpLink>
+        <UnstyledButton>
+         <Icon id="shopping-bag" strokeWidth={1}/>
+        </UnstyledButton>          
       </SuperTopHeader>
       <TopHeader>
         <Col>Sole&Ankle</Col>
@@ -84,4 +85,12 @@ const Category = styled.p`
     color: ${COLORS.primary};
   }
 `;
+
+const HelpLink = styled.a`
+color:inherit;
+outline-offset: 2px;
+text-decoration:none;
+font-size: 14px;
+`;
+
 export default Header;
