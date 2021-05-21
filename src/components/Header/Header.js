@@ -3,13 +3,14 @@ import styled from "styled-components/macro";
 import { COLORS, WEIGHTS } from "../../constants";
 import Icon from "../Icon";
 import UnstyledButton from "../UnstyledButton";
+import SearchInput from '../SearchInput';
 
 const Header = () => {
   return (
     <Wrapper>
       <SuperTopHeader>
         <Promo>Free shipping on domestic orders over $75!</Promo>
-        <input type="search" placeholder="Search..." />
+        <SearchInput />
        <HelpLink href="/help">Help</HelpLink>
         <UnstyledButton>
          <Icon id="shopping-bag" strokeWidth={1}/>
