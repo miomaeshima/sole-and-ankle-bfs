@@ -8,9 +8,20 @@ const Nav = () => {
   return (
     <Wrapper>
       <TopSpace />
-      <BreadCrumbsContainer>
-        <Breadcrumbs />
-      </BreadCrumbsContainer>
+      <Breadcrumbs>
+          <Breadcrumbs.Crumb href="/">Home</Breadcrumbs.Crumb>
+          <Breadcrumbs.Crumb href="/sale">Sale</Breadcrumbs.Crumb>
+          <Breadcrumbs.Crumb href="/sale/shoes">
+            Shoes
+          </Breadcrumbs.Crumb>
+        </Breadcrumbs>
+
+
+      {/* <Breadcrumbs>
+        <Breadcrumbs.Crumb href="/">Home</Breadcrumbs.Crumb>
+        <Breadcrumbs.Crumb href="/sale">Sale</Breadcrumbs.Crumb>
+        <Breadcrumbs.Crumb href="/sale/shoes">Shoes</Breadcrumbs.Crumb>
+      </Breadcrumbs> */}
       <Ol>
         <Li>Lifestyle</Li>
         <Li>jordan</Li>
@@ -31,18 +42,11 @@ const Nav = () => {
 
 const Wrapper = styled.div`
   flex: 0 1 250px;
-  background: lightgreen;
   padding-left: 32px;
   width: 248px;
   colors: ${COLORS.gray900};
 `;
 
-const BreadCrumbsContainer = styled.div`
-  height: 24px;
-  display: flex;
-  align-items: center;
-  background: pink;
-`;
 
 const Ol = styled.ol`
   margin-top: 32px;

@@ -74,7 +74,6 @@ const ShoeCard = ({
 const Link = styled.a`
   text-decoration: none;
   color: inherit;
-  background: pink;
   flex: 1 1 300px;
 `;
 

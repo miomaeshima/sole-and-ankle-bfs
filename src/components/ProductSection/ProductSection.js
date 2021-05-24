@@ -45,7 +45,6 @@ const Header = styled.div`
   align-items: center;
   width: 100%;
   height: 24px;
-  background: pink;
   margin-bottom: 43px;
 `;
 
@@ -55,7 +54,6 @@ const Type = styled.div`
 `;
 
 const ProductContainer = styled.div`
-  background: green;
   width: 100%;
   display: flex;
   flex-direction: row;

@@ -57,15 +57,23 @@ const DisplayedBit = styled.span`
   font-weight: ${WEIGHTS.medium};
   color: ${COLORS.gray900};
   padding: 12px 42px 12px 16px;
-  border-radius: 9px;
+  border-radius: 8px;
   pointer-events: none;
 
-  ${NativeSelect}:focus ~ & {
+  ${NativeSelect}:focus ~ &{
     outline: 1px dotted #212121;
     outline: 5px auto -webkit-focus-ring-color;
-  }
+    }
 `;
 
-const ChevronIcon = styled(Icon)``;
+const ChevronIcon = styled(Icon)`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 9px;
+  margin: auto;
+  width: 24px;
+  height: 24px;
+`;
 
 export default Select;
